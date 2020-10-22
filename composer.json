@@ -1,0 +1,21 @@
+{
+    "name": "wp-graphql/woographql-subscriptions",
+    "description": "Adds WooCommerce subscription functionality to the GraphQL schema(WooCommerce Subscriptions required).",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Geoff Taylor",
+            "email": "geoff@axistaylor.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "WPGraphQL\\WooCommerce_Subscriptions\\": "includes/"
+        },
+        "classmap": [
+            "includes/"
+        ]
+    },
+    "require": {}
+}

@@ -24,6 +24,10 @@ class Type_Registry {
         \WPGraphQL\WooCommerce_Subscriptions\Type\WPEnum\DisplayContext::register();
 
         // Objects and connections.
+        \WPGraphQL\WooCommerce_Subscriptions\Type\WPObject\Subscription_Type::register_types();
         \WPGraphQL\WooCommerce_Subscriptions\Type\WPObject\SubscriptionProduct::register_types();
+
+        // Connections.
+        \WPGraphQL\WooCommerce_Subscriptions\Connection\Subscriptions::register_connections();
     }
 }

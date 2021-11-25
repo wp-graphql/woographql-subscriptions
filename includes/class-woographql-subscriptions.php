@@ -116,20 +116,23 @@ if ( ! class_exists( 'WooGraphQL_Subscriptions' ) ) :
         }
 
 
-		/**
-		 * Sets up WooGraphQL schema.
-		 */
-		private function setup() {
+        /**
+         * Sets up WooGraphQL schema.
+         */
+        private function setup() {
             // Add product types
             add_filter( 'graphql_woocommerce_product_types', array( $this, 'add_product_types' ), 10 );
 
             // Add product enumeration values.
             add_filter( 'graphql_product_types_enum_values', array( $this, 'add_product_enums' ), 10 );
 
-			// Initialize WooGraphQL TypeRegistry.
-			$registry = new \WPGraphQL\WooCommerce_Subscriptions\Type_Registry();
-			add_action( 'graphql_register_types', array( $registry, 'init' ), 10, 1 );
-		}
+            // Register WPGraphQL core filters.
+            \WPGraphQL\WooCommerce_Subscriptions\Core_Schema_Filters::add_filters();
+
+            // Initialize WooGraphQL TypeRegistry.
+            $registry = new \WPGraphQL\WooCommerce_Subscriptions\Type_Registry();
+            add_action( 'graphql_register_types', array( $registry, 'init' ), 10, 1 );
+        }
 	}
 
 endif;

@@ -10,3 +10,4 @@ Adds WooCommerce Subscriptions types and functionality to your WPGraphQL API.
 ## Contributors
 
 <a href="https://github.com/kidunot89"><img src="https://avatars.githubusercontent.com/u/13604318?v=3" title="kidunot89" width="80" height="80"></a>
+<a href="https://github.com/bre1470"><img src="https://avatars.githubusercontent.com/u/40056287?v=4" title="bre1470" width="80" height="80"></a>

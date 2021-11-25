@@ -21,9 +21,13 @@ class ComposerStaticInit42fed052959956494622a4b77e9e6832
     );
 
     public static $classMap = array (
+        'WPGraphQL\\WooCommerce_Subscriptions\\Connection\\Subscriptions' => __DIR__ . '/../..' . '/includes/connection/class-subscriptions.php',
+        'WPGraphQL\\WooCommerce_Subscriptions\\Model\\Subscription' => __DIR__ . '/../..' . '/includes/model/class-subscription.php',
         'WPGraphQL\\WooCommerce_Subscriptions\\Type\\WPEnum\\DisplayContext' => __DIR__ . '/../..' . '/includes/type/Enum/DisplayContext.php',
         'WPGraphQL\\WooCommerce_Subscriptions\\Type\\WPEnum\\PricingPropertiesEnum' => __DIR__ . '/../..' . '/includes/type/Enum/PricingPropertiesEnum.php',
+        'WPGraphQL\\WooCommerce_Subscriptions\\Type\\WPObject\\Subscription_Type' => __DIR__ . '/../..' . '/includes/type/Object/class-subscription-type.php',
         'WPGraphQL\\WooCommerce_Subscriptions\\Type\\WPObject\\SubscriptionProduct' => __DIR__ . '/../..' . '/includes/type/Object/SubscriptionProduct.php',
+        'WPGraphQL\\WooCommerce_Subscriptions\\Core_Schema_Filters' => __DIR__ . '/../..' . '/includes/class-core-schema-filters.php',
         'WPGraphQL\\WooCommerce_Subscriptions\\Type_Registry' => __DIR__ . '/../..' . '/includes/class-type-registry.php',
         'WooGraphQL_Subscriptions' => __DIR__ . '/../..' . '/includes/class-woographql-subscriptions.php',
     );

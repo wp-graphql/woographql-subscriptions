@@ -71,8 +71,8 @@ class Subscription_Type {
                     'order'                 => array(
                         'type'        => 'Order',
                         'description' => __( 'Parent order', 'woographql-subscriptions' ),
-                        'resolve'     => function( $order, array $args, AppContext $context ) {
-                            return Factory::resolve_crud_object( $order->parent_id, $context );
+                        'resolve'     => function( $subscription, array $args, AppContext $context ) {
+                            return $subscription->get_order();
                         },
                     ),
                     'customer'              => array(

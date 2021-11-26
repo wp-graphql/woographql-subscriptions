@@ -92,4 +92,23 @@ class Subscription extends Order {
             $this->fields = array_merge( $this->fields, $fields );
         }
     }
+
+    /**
+     * Get the related Order model.
+     *
+     * @return WC_Subscription|false
+     */
+    public function get_order() {
+        return new Order($this->wc_data->get_parent_id());
+    }
+
+    /**
+     * Get the underlying WooCommerce Subscription class.
+     *
+     * @return WC_Subscription|false
+     */
+    public function get_wc_subscription() {
+        return $this->wc_data;
+    }
+
 }

@@ -31,7 +31,7 @@ class Subscriptions {
             self::get_connection_config(
                 array(
                     'fromType'      => 'Customer',
-                    'toType'         => 'Subscription',
+                    'toType'        => 'Subscription',
                     'fromFieldName' => 'subscriptions',
                     'resolve'       => function( $source, array $args, AppContext $context, ResolveInfo $info ) {
                         $resolver = new PostObjectConnectionResolver( $source, $args, $context, $info, 'shop_subscription' );
@@ -68,10 +68,13 @@ class Subscriptions {
                     'fromType'       => 'Subscription',
                     'toType'         => 'Order',
                     'fromFieldName'  => 'renewals',
-                    'resolve'        => function( $source, array $args, AppContext $context, ResolveInfo $info ) {
-                        $resolver = new PostObjectConnectionResolver( $source, $args, $context, $info, 'shop_order' );
+                    'resolve'        => function( $subscription, array $args, AppContext $context, ResolveInfo $info ) {
+                        $resolver = new PostObjectConnectionResolver( $subscription, $args, $context, $info, 'shop_order' );
 
-                        $resolver->set_query_arg( 'post_parent', $source->ID );
+                        $resolver->set_query_arg(
+                            'post_parent__in',
+                            $subscription->get_wc_subscription()->get_related_orders( 'ids', 'renewal' )
+                        );
 
                         return $resolver->get_connection();
                     },

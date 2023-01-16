@@ -65,7 +65,7 @@ function woographql_subscriptions_dependencies_not_ready() {
         $deps[] = 'WooCommerce Subscriptions';
     }
 
-    if ( ! class_exists( '\WP_GraphQL_WooCommerce' ) ) {
+    if ( ! class_exists( '\WPGraphQL\WooCommerce\WP_GraphQL_WooCommerce' ) ) {
         $deps[] = 'WooGraphQL';
     }
 
